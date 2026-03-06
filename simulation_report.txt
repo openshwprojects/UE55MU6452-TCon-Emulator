@@ -1,0 +1,377 @@
+
+======================================================================
+  SIMULATION RESULTS — Samsung T-CON (flash2_swapped.bin)
+======================================================================
+
+  Stop reason:     max instruction limit (2,000,000)
+  Instructions:    2,000,000
+  Wall time:       17.98s
+  Speed:           111,214 insn/s
+  Final PC:        0x00005A52
+  Last instruction:ldr r5, [pc, #0x10]
+  Dynamic pages:   292 (18688 KB mapped)
+
+── Registers ──
+    R0   = 0x00000003 [Flash]
+    R1   = 0x009D0704 [SDP HW]
+    R2   = 0x00000041 [Flash]
+    R3   = 0x20000650 [SRAM]
+    R4   = 0x20000650 [SRAM]
+    R5   = 0x20000650 [SRAM]
+    R6   = 0x000000F0 [Flash]
+    R7   = 0x00000001 [Flash]
+    R8   = 0x00000000 [Flash]
+    R9   = 0x00000000 [Flash]
+    R10  = 0x00000000 [Flash]
+    R11  = 0x00000000 [Flash]
+    R12  = 0x00000000 [Flash]
+    SP   = 0x20003E20 [SRAM]
+    LR   = 0x00005A19 [Flash]
+    PC   = 0x00005A52 [Flash]
+
+======================================================================
+  UART OUTPUT
+======================================================================
+
+  Candidate UART TX registers (by byte-write count):
+    0x84F80000 :     4 writes
+    0x84F80004 :     1 writes
+    0x84F80005 :     1 writes
+    0x84F80006 :     1 writes
+    0x84F80007 :     1 writes
+    0x84F80008 :     1 writes
+    0x84F80009 :     1 writes
+    0x84F8000A :     1 writes
+    0x84F8000B :     1 writes
+    0x84F8000C :     1 writes
+
+  ► Most likely UART TX data register: 0x84F80000
+
+  Captured output (237 bytes):
+  ────────────────────────────────────────────────────────────
+UART RDY
+TIMESTAMP : 20170825_0922
+#I2C M Init
+.SF[0]: No Exist : 0x00000000
+KTCON Image Info : M55A6U1F20
+hTCON Register LUT uploading done
+Warm Booting !!!!!
+USIT En!
+60Hz USIT Mode
+USIT Phy 0 Init done
+USIT Phy 1 Init done
+PMIC Write 
+  ────────────────────────────────────────────────────────────
+
+======================================================================
+  PERIPHERAL ACCESS ANALYSIS
+======================================================================
+  Total writes logged: 3600
+  Total reads logged:  447
+
+  Top 25 written HW registers:
+       Address   Count   First Value     From PC
+    0x009D0E20     244  0x00000055    0x00004DCA
+    0xE000E180      34  0x00000001    0x0000061C
+    0x84F80000      32  0x00000000    0x00007480
+    0x009D062C      26  0x00000002    0x0000677E
+    0x009D0704       4  0x00000000    0x0000597A
+    0x009D0B10       3  0x00000000    0x0000580A
+    0x009D0B00       3  0x00000000    0x0000581E
+    0x009D0280       2  0x00000000    0x000000CA
+    0x009D0320       2  0x00000010    0x00004D7C
+    0xE000E280       2  0x00000100    0x000057EA
+    0x84F80002       2  0x00000000    0x0000747E
+    0x84F80004       2  0x00000055    0x000076EC
+    0x84F80005       2  0x00000041    0x000076EC
+    0x84F80006       2  0x00000052    0x000076EC
+    0x84F80007       2  0x00000054    0x000076EC
+    0x84F80008       2  0x00000020    0x000076EC
+    0x84F80009       2  0x00000052    0x000076EC
+    0x84F8000A       2  0x00000044    0x000076EC
+    0x84F8000B       2  0x00000059    0x000076EC
+    0x84F8000C       2  0x0000000A    0x000076EC
+    0x84F8000D       2  0x00000054    0x000076EC
+    0x84F8000E       2  0x00000049    0x000076EC
+    0x84F8000F       2  0x0000004D    0x000076EC
+    0x84F80010       2  0x00000045    0x000076EC
+    0x84F80011       2  0x00000053    0x000076EC
+
+  Top 25 read HW registers:
+       Address   Count
+    0x009D0E10     244
+    0x009D0B88      53
+    0x009D0B8C      51
+    0x009D02B4      26
+    0x009D062C      26
+    0x009D02B8      25
+    0x009D0320       2
+    0x009D02A8       2
+    0x009D02EC       1
+    0x84EFFF00       1
+    0x84EFFFF8       1
+    0x00FC0004       1
+    0x84EFFFF4       1
+    0x009D0280       1
+    0x009D0704       1
+    0x01062000       1
+    0x84EFFFFC       1
+    0x00E80004       1
+    0x00E813B4       1
+    0x009D060C       1
+    0x00FB4344       1
+    0x00FB8344       1
+    0x00FB4340       1
+    0x00FB8340       1
+    0x01061000       1
+
+  Address space regions accessed:
+    0x009xxxxx:    305 writes
+    0x00Exxxxx:   2242 writes
+    0x00Fxxxxx:    516 writes
+    0x84Fxxxxx:    500 writes
+    0xE00xxxxx:     37 writes
+    0x009xxxxx:    434 reads
+    0x00Exxxxx:      2 reads
+    0x00Fxxxxx:      5 reads
+    0x010xxxxx:      2 reads
+    0x84Exxxxx:      4 reads
+
+======================================================================
+  EXECUTION TRACE (first 300 sampled)
+======================================================================
+  [      1] 0x000000C0: movs       r3, #0
+  [      2] 0x000000C2: ldr        r4, [r3]
+  [      3] 0x000000C4: mov        sp, r4
+  [      4] 0x000000C6: ldr        r0, [pc, #0x58]
+  [      5] 0x000000C8: movs       r1, #0
+  [      6] 0x000000CA: str        r1, [r0]
+  [      7] 0x000000CC: bl         #0x150
+  [      8] 0x00000150: push       {lr}
+  [      9] 0x00000152: ldr        r3, [pc, #0x24]
+  [     10] 0x00000154: ldr        r2, [pc, #0x24]
+  [     11] 0x00000156: b          #0x160
+  [     12] 0x00000160: ldr        r0, [pc, #0x1c]
+  [     13] 0x00000162: cmp        r3, r0
+  [     14] 0x00000164: blo        #0x158
+  [     15] 0x00000158: ldrb       r1, [r2]
+  [     16] 0x0000015A: adds       r2, #1
+  [     17] 0x0000015C: strb       r1, [r3]
+  [     18] 0x0000015E: adds       r3, #1
+  [  11000] 0x0000016A: movs       r2, #0
+  [  11500] 0x0000016E: adds       r3, #1
+  [  12000] 0x00000172: cmp        r3, r1
+  [  74000] 0x00000620: bne        #0x612
+  [  74500] 0x00004A64: bhi        #0x4a7e
+  [  75000] 0x00004B60: ldr        r4, [r4, r3]
+  [  75500] 0x0000747A: movs       r2, #0
+  [  76000] 0x00004DDC: pop        {r3, r4, r5, pc}
+  [  76500] 0x00007BA4: cmp        r2, r3
+  [  77000] 0x00004DEA: adds       r4, #1
+  [  77500] 0x00007A20: push       {r4, r5, r6, r7, lr}
+  [  78000] 0x00004DBC: push       {r3, r4, r5, lr}
+  [  78500] 0x00006596: add        sp, #0x1c
+  [  79000] 0x00004FEC: ldr        r2, [r2]
+  [  79500] 0x00004FF4: tst        r1, r3
+  [  80000] 0x00004C8C: adds       r0, r6, #0
+  [  80500] 0x00007A3E: ldrb       r3, [r3, #1]
+  [  81000] 0x000076F0: adds       r0, #1
+  [  81500] 0x00004DCC: cmp        r4, #0xa
+  [  82000] 0x00007D6C: b          #0x7d98
+  [  82500] 0x000076F6: pop        {r4, pc}
+  [  83000] 0x00004DC0: bl         #0x4d60
+  [  83500] 0x00007A32: strb       r3, [r4]
+  [  84000] 0x00004D64: ldr        r0, [r0]
+  [  84500] 0x0000684C: bgt        #0x6868
+  [  85000] 0x000068F4: cmp        r1, r3
+  [  85500] 0x00006894: ldr        r6, [sp, #0xc]
+  [  86000] 0x0000689E: beq        #0x68a4
+  [  86500] 0x000068AC: b          #0x68ec
+  [  87000] 0x000068F6: blt        #0x688c
+  [  88000] 0x000068A0: asrs       r3, r3, #0x10
+  [  88500] 0x000068EC: adds       r7, #2
+  [  89500] 0x00006896: movs       r0, #2
+  [  90000] 0x000068A4: uxth       r3, r3
+  [  91000] 0x0000688C: movs       r3, #3
+  [  92000] 0x000068A2: b          #0x68a6
+  [  92500] 0x000068EE: adds       r2, #4
+  [  93500] 0x00006898: cmp        r6, #0
+  [  94000] 0x000068A6: str        r3, [r2]
+  [  95000] 0x0000688E: adds       r6, r7, #0
+  [  96500] 0x000068F0: adds       r1, #1
+  [  97500] 0x0000689A: beq        #0x68ae
+  [  98000] 0x000068A8: adds       r4, r3, r4
+  [  99000] 0x00006890: bics       r6, r3
+  [ 100500] 0x000068F2: ldr        r3, [sp, #8]
+  [ 101500] 0x0000689C: tst        r7, r0
+  [ 102000] 0x000068AA: uxth       r4, r4
+  [ 103000] 0x00006892: ldr        r3, [r6]
+  [ 104500] 0x000068F4: cmp        r1, r3
+  [ 105500] 0x0000689E: beq        #0x68a4
+  [ 106000] 0x000068AC: b          #0x68ec
+  [ 107000] 0x00006894: ldr        r6, [sp, #0xc]
+  [ 108500] 0x000068F6: blt        #0x688c
+  [ 109500] 0x000068A0: asrs       r3, r3, #0x10
+  [ 110000] 0x000068EC: adds       r7, #2
+  [ 111000] 0x00006896: movs       r0, #2
+  [ 111500] 0x000068A4: uxth       r3, r3
+  [ 112500] 0x0000688C: movs       r3, #3
+  [ 113500] 0x000068A2: b          #0x68a6
+  [ 114000] 0x000068EE: adds       r2, #4
+  [ 115000] 0x00006898: cmp        r6, #0
+  [ 115500] 0x000068A6: str        r3, [r2]
+  [ 116500] 0x0000688E: adds       r6, r7, #0
+  [ 118000] 0x000068F0: adds       r1, #1
+  [ 119000] 0x0000689A: beq        #0x68ae
+  [ 119500] 0x000068A8: adds       r4, r3, r4
+  [ 120500] 0x00006890: bics       r6, r3
+  [ 122000] 0x000068F2: ldr        r3, [sp, #8]
+  [ 123000] 0x0000689C: tst        r7, r0
+  [ 123500] 0x000068AA: uxth       r4, r4
+  [ 124500] 0x00006892: ldr        r3, [r6]
+  [ 126000] 0x000068F4: cmp        r1, r3
+  [ 127000] 0x0000689E: beq        #0x68a4
+  [ 127500] 0x000068AC: b          #0x68ec
+  [ 128500] 0x00006894: ldr        r6, [sp, #0xc]
+  [ 130000] 0x000068F6: blt        #0x688c
+  [ 131000] 0x000068A0: asrs       r3, r3, #0x10
+  [ 131500] 0x000068EC: adds       r7, #2
+  [ 132500] 0x00006896: movs       r0, #2
+  [ 133000] 0x00004DCE: bne        #0x4ddc
+  [ 133500] 0x00007D9C: str        r0, [sp, #0x24]
+  [ 134000] 0x00004DC0: bl         #0x4d60
+  [ 134500] 0x00006754: ldr        r3, [pc, #0x30]
+  [ 135500] 0x000076F4: blo        #0x76e8
+  [ 136000] 0x000065F2: bx         lr
+  [ 136500] 0x00006660: blo        #0x666a
+  [ 137000] 0x00004C8C: adds       r0, r6, #0
+  [ 137500] 0x00004DC4: cmp        r0, #0
+  [ 138000] 0x00006668: bls        #0x6672
+  [ 138500] 0x00004DEA: adds       r4, #1
+  [ 139000] 0x00006666: cmp        r1, r2
+  [ 139500] 0x000068A8: adds       r4, r3, r4
+  [ 140000] 0x000068F2: ldr        r3, [sp, #8]
+  [ 140500] 0x00006890: bics       r6, r3
+  [ 141000] 0x0000689C: tst        r7, r0
+  [ 141500] 0x000068AA: uxth       r4, r4
+  [ 142500] 0x00006892: ldr        r3, [r6]
+  [ 144000] 0x000068F4: cmp        r1, r3
+  [ 145000] 0x00004DD8: movs       r3, #0xd
+  [ 145500] 0x00007528: mov        r0, sp
+  [ 146000] 0x0000666A: adds       r3, #8
+  [ 146500] 0x00006898: cmp        r6, #0
+  [ 147000] 0x000068A6: str        r3, [r2]
+  [ 147500] 0x000068F0: adds       r1, #1
+  [ 148000] 0x0000688E: adds       r6, r7, #0
+  [ 148500] 0x0000689A: beq        #0x68ae
+  [ 152000] 0x00004DDC: pop        {r3, r4, r5, pc}
+  [ 152500] 0x000076F4: blo        #0x76e8
+  [ 153000] 0x00002CD0: adds       r6, r6, r3
+  [ 153500] 0x00002DA2: ldrb       r4, [r6, #2]
+  [ 154000] 0x00005A52: ldr        r5, [pc, #0x10]
+
+======================================================================
+  MOST CALLED FUNCTION TARGETS
+======================================================================
+    0x00004D60:   137 calls
+    0x00004DBC:   132 calls
+    0x000064DC:    50 calls
+    0x000064E8:    50 calls
+    0x0000654A:    25 calls
+    0x000001A4:    10 calls
+    0x00004A5C:    10 calls
+    0x000001AA:    10 calls
+    0x00004994:     8 calls
+    0x00004A60:     8 calls
+    0x00007A20:     6 calls
+    0x00007488:     6 calls
+    0x000076E4:     6 calls
+    0x00004DE4:     6 calls
+    0x00004984:     5 calls
+    0x00004B94:     5 calls
+    0x000074F8:     5 calls
+    0x000049BC:     5 calls
+    0x00004C74:     5 calls
+    0x000049C4:     5 calls
+    0x00004CB8:     5 calls
+    0x00004974:     4 calls
+    0x00004B54:     4 calls
+    0x0000668C:     4 calls
+    0x0000498C:     3 calls
+    0x00004BB4:     3 calls
+    0x000086A4:     3 calls
+    0x000057F4:     2 calls
+    0x000057E0:     2 calls
+    0x00004954:     2 calls
+    0x00004AC0:     2 calls
+    0x000076F8:     2 calls
+    0x000065D8:     2 calls
+    0x00007892:     2 calls
+    0x00006654:     2 calls
+    0x00000150:     1 calls
+    0x00001360:     1 calls
+    0x0000060C:     1 calls
+    0x0000499C:     1 calls
+    0x00004A88:     1 calls
+
+── Hot Loops (most-executed PCs) ──
+    0x00005A52: 461522 hits — ldr r5, [pc, #0x10]
+    0x00005A54: 461521 hits — ldrb r0, [r5]
+    0x00005A56: 461521 hits — cmp r0, #0
+    0x00005A58: 461521 hits — bne #0x5a52
+    0x00000170:  10561 hits — ldr r1, [pc, #0x14]
+    0x00000172:  10561 hits — cmp r3, r1
+    0x00000174:  10561 hits — blo #0x16a
+    0x0000016A:  10560 hits — movs r2, #0
+    0x0000016C:  10560 hits — strb r2, [r3]
+    0x0000016E:  10560 hits — adds r3, #1
+    0x000068F2:   2747 hits — ldr r3, [sp, #8]
+    0x000068F4:   2747 hits — cmp r1, r3
+    0x000068F6:   2747 hits — blt #0x688c
+    0x0000688C:   2744 hits — movs r3, #3
+    0x0000688E:   2744 hits — adds r6, r7, #0
+    0x00006890:   2744 hits — bics r6, r3
+    0x00006892:   2744 hits — ldr r3, [r6]
+    0x00006894:   2744 hits — ldr r6, [sp, #0xc]
+    0x00006896:   2744 hits — movs r0, #2
+    0x00006898:   2744 hits — cmp r6, #0
+
+── Code Coverage ──
+  PC range: 0x000000C0 - 0x00007D9C
+  Unique PCs (sampled): 81
+
+── Known String Function Status ──
+    0x008921 "Oops!!! HardFault_Handler" — ✗ not reached
+    0x0089BD "user_debug" — ✗ not reached
+    0x0089C8 "usr_boot_main" — ✗ not reached
+    0x0089D6 "Enter Multi Tasking" — ✗ not reached
+    0x0089EB "UART RDY" — ✗ not reached
+    0x008A05 "20170825_0922 (build timestamp)" — ✗ not reached
+    0x008A13 "I2C M Init" — ✗ not reached
+    0x008A2C "MEMIF_CMD_SRAM_REFLASH" — ✗ not reached
+    0x015161 "Cold Booting !!!!!" — ✗ not reached
+    0x015175 "Warm Booting !!!!!" — ✗ not reached
+    0x015211 "TCON RDY" — ✗ not reached
+
+── SRAM Contents (first 256 bytes from SP area) ──
+  0x20003EF0: 90 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  0x20003F00: 00 00 00 00 7c 15 00 00 c4 15 00 00 0c 16 00 00  ....|...........
+  0x20003F10: 54 16 00 00 1d 00 00 00 9f 15 00 00 40 00 00 00  T...........@...
+  0x20003F20: 88 13 00 00 24 06 00 20 00 00 00 00 8d 32 00 00  ....$.. .....2..
+  0x20003F30: d0 06 00 20 dc 10 e8 00 64 13 00 00 00 14 e8 00  ... ....d.......
+  0x20003F40: 88 13 00 00 c0 15 e8 00 88 13 00 00 c0 1b e8 00  ................
+  0x20003F50: 64 13 00 00 c4 1b e8 00 64 13 00 00 98 1c e8 00  d.......d.......
+  0x20003F60: 88 13 00 00 9c 1c e8 00 88 13 00 00 48 0e e8 00  ............H...
+  0x20003F70: 88 13 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+  0x20003F80: 00 00 00 00 40 57 01 00 10 00 0c 00 00 00 e8 00  ....@W..........
+  0x20003F90: 01 00 00 00 b8 08 00 00 ca 0f 00 00 00 00 00 00  ................
+  0x20003FA0: 00 00 00 00 98 ba 00 00 8c 05 00 20 00 00 00 00  ........... ....
+  0x20003FB0: 00 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00  ................
+  0x20003FC0: 00 00 00 00 11 01 00 00 00 00 00 00 88 13 00 00  ................
+  0x20003FD0: 01 00 00 00 00 00 00 00 00 00 00 00 c9 06 00 00  ................
+  0x20003FE0: f0 3f 00 20 43 04 00 00 1c 2f 00 20 d1 00 00 00  .?. C..../. ....
+
+======================================================================
+  Report: C:\Users\iwos2\Mój dysk\TODO\UE55MU6452U\druga_skraj\simulation_report.txt
+  Time:   2026-03-07 00:30:57
+======================================================================
